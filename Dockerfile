@@ -11,6 +11,3 @@ RUN python get-pip.py --user
 RUN pip3 install --user ansible
 
 USER ${user}
-
-ENV PATH "$PATH:/home/jenkins/.local/bin"
-RUN ansible --version
