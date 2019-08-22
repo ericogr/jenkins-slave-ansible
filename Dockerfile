@@ -1,4 +1,4 @@
-FROM jenkins/slave:3.29-1
+FROM jenkins/jnlp-slave:3.29-1
 MAINTAINER EricoGR <ericogr@gmail.com>
 LABEL Description="This is a base image, which provides the Jenkins agent executable (slave.jar) with ansible"
 
