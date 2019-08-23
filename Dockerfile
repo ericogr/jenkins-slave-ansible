@@ -6,8 +6,9 @@ USER root
 
 RUN apt-get update
 RUN apt-get install -y python3-pip
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-RUN python get-pip.py --user
-RUN pip3 install --user ansible
 
 USER jenkins
+
+RUN pip3 install --user ansible
+
+ENV PATH="${PATH}:/home/jenkins/.local/bin"
