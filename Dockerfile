@@ -1,6 +1,6 @@
-FROM jenkins/jnlp-slave:3.29-1
+FROM jenkins/slave:3.29-2
 MAINTAINER EricoGR <ericogr@gmail.com>
-LABEL Description="This is a base image, which provides the Jenkins agent executable (slave.jar) with ansible"
+LABEL Description="Jenkins agent with ansible"
 
 USER root
 
@@ -11,3 +11,7 @@ RUN python get-pip.py --user
 RUN pip3 install --user ansible
 
 USER ${user}
+
+COPY jenkins-slave /usr/local/bin/jenkins-slave
+
+ENTRYPOINT ["jenkins-slave"]
